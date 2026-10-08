@@ -1,0 +1,454 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --fundo: #0b0d21;
+    --fundo-card: #1a1d3a;
+    --texto: #f0f0f0;
+    --destaque: #ffb703;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.claro {
+    --fundo: #eef2ff;
+    --fundo-card: #ffffff;
+    --texto: #1a1a2e;
+    --destaque: #d97706;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    color: var(--destaque);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.escondido {
+    display: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px 30px;
+    background-color: var(--fundo-card);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--destaque);
+}
+
+#btnTema {
+    background: none;
+    border: 2px solid var(--destaque);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: var(--destaque);
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.botao:hover {
+    transform: scale(1.05);
+}
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size: 50px 50px, 90px 90px;
+    background-position: 0 0, 25px 40px;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+.subtitulo {
+    margin-bottom: 20px;
+}
+
+#busca {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--destaque);
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.grade {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--fundo-card);
+    padding: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255, 183, 3, 0.3);
+}
+
+.card.selecionado {
+    outline: 3px solid var(--destaque);
+}
+
+.planeta {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    animation: girar 6s linear infinite;
+}
+
+.mercurio { background: radial-gradient(circle at 30% 30%, #d4d4d4, #6b6b6b); }
+.venus    { background: radial-gradient(circle at 30% 30%, #ffe4a3, #c98b2b); }
+.terra    { background: radial-gradient(circle at 30% 30%, #6fc3ff, #1b5e20); }
+.marte    { background: radial-gradient(circle at 30% 30%, #ff8a65, #9c2a0f); }
+.jupiter  { background: repeating-linear-gradient(0deg, #d9a066, #d9a066 10px, #a86b3c 10px, #a86b3c 20px); }
+.saturno  { background: radial-gradient(circle at 30% 30%, #f5e6a8, #b8963e); box-shadow: 0 0 0 6px rgba(230, 210, 150, 0.4); }
+.urano    { background: radial-gradient(circle at 30% 30%, #c4f5f5, #4fb3bf); }
+.netuno   { background: radial-gradient(circle at 30% 30%, #6d8cff, #1a237e); }
+
+@keyframes girar {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.detalhe {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: var(--fundo-card);
+    border-left: 5px solid var(--destaque);
+    border-radius: 10px;
+    text-align: left;
+}
+
+#textoCuriosidade {
+    font-size: 1.2rem;
+    font-style: italic;
+    min-height: 60px;
+}
+
+#opcoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.opcao {
+    padding: 12px;
+    background-color: var(--fundo-card);
+    color: var(--texto);
+    border: 2px solid var(--destaque);
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.opcao:hover:not(:disabled) {
+    background-color: var(--destaque);
+    color: #000;
+}
+
+.opcao.certa  { background-color: #2e7d32; color: #fff; }
+.opcao.errada { background-color: #c62828; color: #fff; }
+
+#resultado {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+nav a.ativo {
+    color: var(--destaque);
+    border-bottom: 2px solid var(--destaque);
+}
+
+.sol-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.sol-desenho {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 40%, #fff3b0, #ffb703 45%, #fb8500);
+    box-shadow: 0 0 60px #ffb703, 0 0 120px #fb8500;
+    animation: pulsar 3s ease-in-out infinite;
+}
+
+@keyframes pulsar {
+    0%, 100% {
+        box-shadow: 0 0 60px #ffb703, 0 0 120px #fb8500;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 90px #ffb703, 0 0 180px #fb8500;
+        transform: scale(1.05);
+    }
+}
+
+.sol-texto p {
+    margin-bottom: 15px;
+}
+
+.lista-fatos {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.lista-fatos li {
+    background-color: var(--fundo-card);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 4px solid var(--destaque);
+}
+
+.lista-fatos span {
+    margin-right: 8px;
+}
+
+.tabela-container {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--fundo-card);
+    min-width: 600px;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+th {
+    background-color: var(--destaque);
+    color: #000;
+    cursor: pointer;
+    user-select: none;
+}
+
+th:hover {
+    filter: brightness(1.1);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 183, 3, 0.2);
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+.nota {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+.calculadora {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#inputPeso {
+    width: 200px;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 25px;
+    border: 2px solid var(--destaque);
+    font-size: 1rem;
+    text-align: center;
+}
+
+#erroPeso {
+    color: #ef5350;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.resultado-peso {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.item-peso {
+    background-color: var(--fundo-card);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.item-peso strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.barra-fundo {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border-radius: 5px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.barra {
+    height: 100%;
+    width: 0;
+    background-color: var(--destaque);
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+
+#btnTopo {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--destaque);
+    color: #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+#btnTopo.mostrar {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+footer {
+    background-color: var(--fundo-card);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+    header {
+        justify-content: center;
+        padding: 15px;
+    }
+
+    nav ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .sol-conteudo {
+        flex-direction: column;
+    }
+
+    .sol-desenho {
+        width: 140px;
+        height: 140px;
+    }
+}

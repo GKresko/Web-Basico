@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorando o Sistema Solar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">🪐 Sistema Solar</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sol">Sol</a></li>
+                <li><a href="#planetas">Planetas</a></li>
+                <li><a href="#tabela">Tabela</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+                <li><a href="#peso">Peso</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+
+        <button id="btnTema" title="Trocar tema">🌙</button>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <h2>Bem-vindo ao nosso cantinho do universo!</h2>
+            <p>O Sistema Solar tem 8 planetas girando em volta do Sol. Vamos conhecer cada um deles?</p>
+            <a href="#sol" class="botao">Começar a explorar</a>
+        </section>
+
+        <section id="sol">
+            <h2>O Sol</h2>
+            <p class="subtitulo">A estrela que fica no centro do nosso Sistema Solar.</p>
+
+            <div class="sol-conteudo">
+                <div class="sol-desenho"></div>
+
+                <div class="sol-texto">
+                    <p>
+                        O Sol é uma estrela formada principalmente por <strong>hidrogênio</strong> e
+                        <strong>hélio</strong>. No seu núcleo, o hidrogênio vira hélio através da
+                        fusão nuclear, e é isso que produz a luz e o calor que chegam até a Terra.
+                    </p>
+                    <p>
+                        Ele tem cerca de <strong>4,6 bilhões de anos</strong> e ainda deve brilhar por
+                        mais uns 5 bilhões de anos antes de virar uma gigante vermelha.
+                    </p>
+
+                    <ul class="lista-fatos">
+                        <li><span>🌡️</span> Temperatura na superfície: cerca de 5.500 °C</li>
+                        <li><span>🔥</span> Temperatura no núcleo: cerca de 15 milhões °C</li>
+                        <li><span>📏</span> Diâmetro: cerca de 1,39 milhão de km</li>
+                        <li><span>🌍</span> Caberiam cerca de 1,3 milhão de Terras dentro dele</li>
+                        <li><span>☀️</span> Distância até a Terra: cerca de 150 milhões de km</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="planetas">
+            <h2>Os Planetas</h2>
+            <p class="subtitulo">Clique em um planeta para ver mais informações.</p>
+
+            <input type="text" id="busca" placeholder="Buscar planeta...">
+
+            <div class="grade">
+                <div class="card" data-nome="Mercúrio" data-info="É o menor planeta e o mais próximo do Sol. Um ano lá dura só 88 dias!">
+                    <div class="planeta mercurio"></div>
+                    <h3>Mercúrio</h3>
+                </div>
+                <div class="card" data-nome="Vênus" data-info="É o planeta mais quente, chegando a 465 °C. Ele gira ao contrário dos outros!">
+                    <div class="planeta venus"></div>
+                    <h3>Vênus</h3>
+                </div>
+                <div class="card" data-nome="Terra" data-info="Nosso lar! É o único planeta conhecido com vida e água líquida na superfície.">
+                    <div class="planeta terra"></div>
+                    <h3>Terra</h3>
+                </div>
+                <div class="card" data-nome="Marte" data-info="O planeta vermelho. Tem o maior vulcão do Sistema Solar: o Monte Olimpo.">
+                    <div class="planeta marte"></div>
+                    <h3>Marte</h3>
+                </div>
+                <div class="card" data-nome="Júpiter" data-info="O maior planeta de todos. Caberiam mais de 1.300 Terras dentro dele!">
+                    <div class="planeta jupiter"></div>
+                    <h3>Júpiter</h3>
+                </div>
+                <div class="card" data-nome="Saturno" data-info="Famoso pelos seus anéis, feitos de gelo e rocha. Ele flutuaria na água!">
+                    <div class="planeta saturno"></div>
+                    <h3>Saturno</h3>
+                </div>
+                <div class="card" data-nome="Urano" data-info="Gira &quot;deitado&quot;, com o eixo quase paralelo à sua órbita.">
+                    <div class="planeta urano"></div>
+                    <h3>Urano</h3>
+                </div>
+                <div class="card" data-nome="Netuno" data-info="O mais distante do Sol. Tem os ventos mais fortes: mais de 2.000 km/h!">
+                    <div class="planeta netuno"></div>
+                    <h3>Netuno</h3>
+                </div>
+            </div>
+
+            <div id="detalhe" class="detalhe escondido">
+                <h3 id="detalheNome"></h3>
+                <p id="detalheInfo"></p>
+            </div>
+        </section>
+
+        <section id="tabela">
+            <h2>Tabela Comparativa</h2>
+            <p class="subtitulo">Clique no título de uma coluna para ordenar a tabela.</p>
+
+            <div class="tabela-container">
+                <table id="tabelaPlanetas">
+                    <thead>
+                        <tr>
+                            <th data-coluna="0" data-tipo="texto">Planeta ⇅</th>
+                            <th data-coluna="1" data-tipo="numero">Distância do Sol (milhões de km) ⇅</th>
+                            <th data-coluna="2" data-tipo="numero">Diâmetro (km) ⇅</th>
+                            <th data-coluna="3" data-tipo="numero">Luas ⇅</th>
+                            <th data-coluna="4" data-tipo="numero">Duração do ano (dias) ⇅</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Mercúrio</td>
+                            <td>57.9</td>
+                            <td>4879</td>
+                            <td>0</td>
+                            <td>88</td>
+                        </tr>
+                        <tr>
+                            <td>Vênus</td>
+                            <td>108.2</td>
+                            <td>12104</td>
+                            <td>0</td>
+                            <td>225</td>
+                        </tr>
+                        <tr>
+                            <td>Terra</td>
+                            <td>149.6</td>
+                            <td>12756</td>
+                            <td>1</td>
+                            <td>365</td>
+                        </tr>
+                        <tr>
+                            <td>Marte</td>
+                            <td>227.9</td>
+                            <td>6792</td>
+                            <td>2</td>
+                            <td>687</td>
+                        </tr>
+                        <tr>
+                            <td>Júpiter</td>
+                            <td>778.5</td>
+                            <td>142984</td>
+                            <td>95</td>
+                            <td>4333</td>
+                        </tr>
+                        <tr>
+                            <td>Saturno</td>
+                            <td>1432</td>
+                            <td>120536</td>
+                            <td>274</td>
+                            <td>10759</td>
+                        </tr>
+                        <tr>
+                            <td>Urano</td>
+                            <td>2867</td>
+                            <td>51118</td>
+                            <td>28</td>
+                            <td>30687</td>
+                        </tr>
+                        <tr>
+                            <td>Netuno</td>
+                            <td>4515</td>
+                            <td>49528</td>
+                            <td>16</td>
+                            <td>60190</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="nota">* O número de luas pode mudar, porque os cientistas continuam descobrindo novas.</p>
+        </section>
+
+        <section id="curiosidades">
+            <h2>Curiosidade Aleatória</h2>
+            <p id="textoCuriosidade">Clique no botão para descobrir algo novo!</p>
+            <button id="btnCuriosidade" class="botao">Me conte uma curiosidade</button>
+        </section>
+
+        <section id="peso">
+            <h2>Quanto você pesaria em outro planeta?</h2>
+            <p class="subtitulo">
+                Cada planeta tem uma gravidade diferente. Digite seu peso e veja o resultado!
+            </p>
+
+            <div class="calculadora">
+                <input type="number" id="inputPeso" placeholder="Seu peso em kg" min="1">
+                <button id="btnCalcular" class="botao">Calcular</button>
+            </div>
+
+            <p id="erroPeso"></p>
+
+            <div id="resultadoPeso" class="resultado-peso"></div>
+        </section>
+
+        <section id="quiz">
+            <h2>Quiz Rápido</h2>
+            <p id="pergunta"></p>
+            <div id="opcoes"></div>
+            <p id="resultado"></p>
+            <button id="btnProxima" class="botao escondido">Próxima pergunta</button>
+        </section>
+
+    </main>
+
+    <button id="btnTopo" title="Voltar ao topo">⬆</button>
+
+    <footer>
+        <p>Trabalho de Web Básico — HTML, CSS e JavaScript</p>
+        <p>&copy; <span id="ano"></span> - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
